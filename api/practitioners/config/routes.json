@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/practitioners",
+      "handler": "practitioners.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/practitioners/count",
+      "handler": "practitioners.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/practitioners/:id",
+      "handler": "practitioners.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/practitioners",
+      "handler": "practitioners.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/practitioners/:id",
+      "handler": "practitioners.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/practitioners/:id",
+      "handler": "practitioners.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

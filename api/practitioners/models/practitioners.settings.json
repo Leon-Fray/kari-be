@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "practitioners",
+  "info": {
+    "name": "Practitioners",
+    "description": "Medical practitioners available for appointments"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "specialty": {
+      "type": "string",
+      "required": true
+    },
+    "license_number": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "certifications": {
+      "type": "json"
+    },
+    "description": {
+      "type": "text"
+    },
+    "clinic_location": {
+      "type": "json"
+    },
+    "contact_info": {
+      "type": "json"
+    },
+    "availability": {
+      "type": "json"
+    },
+    "average_rating": {
+      "type": "decimal"
+    },
+    "reviews": {
+      "collection": "reviews",
+      "via": "practitioner"
+    },
+    "user": { "model": "plugins::users-permissions.user", "required": true }
+  }
+}
