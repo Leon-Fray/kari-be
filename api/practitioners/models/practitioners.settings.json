@@ -17,7 +17,8 @@
       "required": true
     },
     "specialty": {
-      "type": "string",
+      "type": "enumeration",
+      "enum": ["Cardiology", "Dermatology", "Pediatrics", "General Practice", "Psychiatry", "Neurology", "Orthopedics", "Other"],
       "required": true
     },
     "license_number": {
@@ -47,6 +48,23 @@
       "collection": "reviews",
       "via": "practitioner"
     },
-    "user": { "model": "plugins::users-permissions.user", "required": true }
+    "user": { "model": "plugins::users-permissions.user", "required": true },
+    "clinic_address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "zip_code": {
+      "type": "string"
+    },
+    "consultation_types": {
+      "type": "json",
+      "required": true,
+      "default": ["virtual"]
+    }
   }
 }

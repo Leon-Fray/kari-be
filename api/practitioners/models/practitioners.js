@@ -52,5 +52,10 @@ module.exports = {
       model: 'plugins::users-permissions.user',
       required: true,
     },
+    consultation_types: {
+      type: 'json',
+      required: true,
+      default: ["virtual"],
+    },
   },
 };

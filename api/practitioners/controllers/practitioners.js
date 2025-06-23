@@ -39,4 +39,16 @@ module.exports = {
     const { id } = ctx.params;
     return strapi.services.practitioners.delete({ id });
   },
+
+  async search(ctx) {
+    const filters = ctx.query;
+    try {
+      const practitioners = await strapi.services.practitioners.findFiltered(filters);
+      ctx.body = practitioners; // Use ctx.body instead of ctx.send()
+    } catch (err) {
+      console.error('Search error:', err);
+      ctx.status = 400;
+      ctx.body = { error: 'Could not perform search', details: err.message };
+    }
+  },
 };

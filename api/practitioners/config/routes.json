@@ -2,6 +2,14 @@
   "routes": [
     {
       "method": "GET",
+      "path": "/practitioners/search",
+      "handler": "practitioners.search",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/practitioners",
       "handler": "practitioners.find",
       "config": {
